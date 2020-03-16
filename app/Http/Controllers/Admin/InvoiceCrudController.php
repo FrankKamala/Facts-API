@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\InvoiceRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class UserCrudController
+ * Class InvoiceCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class UserCrudController extends CrudController
+class InvoiceCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -21,38 +21,44 @@ class UserCrudController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel('App\Models\User');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/user');
-        $this->crud->setEntityNameStrings('user', 'users');
+        $this->crud->setModel('App\Models\Invoice');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/invoice');
+        $this->crud->setEntityNameStrings('invoice', 'invoices');
     }
 
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setColumns(['name', 'email']);
+        $this->crud->setFromDb();
     }
 
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(UserRequest::class);
+        $this->crud->setValidation(InvoiceRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->addField([
-            'name' => 'name',
-            'type' => 'text',
-            'label' => 'User Name'
+            'name' => 'supplier_id',
+            'type' => 'number',
+            'label' => 'Supplier'
         ]);
 
         $this->crud->addField([
-            'name' => 'email',
-            'type' => 'email',
-            'label' => 'Email'
+            'name' => 'buyer_id',
+            'type' => 'number',
+            'label' => 'Buyer'
         ]);
 
         $this->crud->addField([
-            'name' => 'password',
-            'type' => 'password',
-            'label' => 'Password'
+            'name' => 'invoice_status',
+            'type' => 'number',
+            'label' => 'Invoice Status'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'invoice_amount',
+            'type' => 'number',
+            'label' => 'Invoice Amount'
         ]);
     }
 

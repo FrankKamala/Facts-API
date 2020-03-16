@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\RoleRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class UserCrudController
+ * Class RoleCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class UserCrudController extends CrudController
+class RoleCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -21,39 +21,23 @@ class UserCrudController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel('App\Models\User');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/user');
-        $this->crud->setEntityNameStrings('user', 'users');
+        $this->crud->setModel('App\Models\Role');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/role');
+        $this->crud->setEntityNameStrings('role', 'roles');
     }
 
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setColumns(['name', 'email']);
+        $this->crud->setFromDb();
     }
 
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(UserRequest::class);
+        $this->crud->setValidation(RoleRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->addField([
-            'name' => 'name',
-            'type' => 'text',
-            'label' => 'User Name'
-        ]);
-
-        $this->crud->addField([
-            'name' => 'email',
-            'type' => 'email',
-            'label' => 'Email'
-        ]);
-
-        $this->crud->addField([
-            'name' => 'password',
-            'type' => 'password',
-            'label' => 'Password'
-        ]);
+        $this->crud->setFromDb();
     }
 
     protected function setupUpdateOperation()
