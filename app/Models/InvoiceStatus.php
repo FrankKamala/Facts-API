@@ -35,7 +35,7 @@ class InvoiceStatus extends Model
     |--------------------------------------------------------------------------
     */
     public function invoices() {
-        return $this->hasMany('App\Invoice');
+        return $this->hasMany('App\Models\Invoice');
     }
 
     /*

@@ -35,6 +35,10 @@ class User extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function invoices() {
+        return $this->hasMany('App\Models\Invoice');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

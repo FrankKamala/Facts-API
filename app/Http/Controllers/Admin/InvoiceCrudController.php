@@ -39,20 +39,29 @@ class InvoiceCrudController extends CrudController
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->addField([
             'name' => 'supplier_id',
-            'type' => 'number',
-            'label' => 'Supplier'
+            'type' => 'select',
+            'label' => 'Supplier',
+            'entity' => 'supplier',
+            'attribute' => 'name',
+            'model' => "App\Models\User"
         ]);
 
         $this->crud->addField([
             'name' => 'buyer_id',
-            'type' => 'number',
-            'label' => 'Buyer'
+            'type' => 'select',
+            'label' => 'Buyer',
+            'entity' => 'buyer',
+            'attribute' => 'name',
+            'model' => "App\Models\User"
         ]);
 
         $this->crud->addField([
             'name' => 'invoice_status',
-            'type' => 'number',
-            'label' => 'Invoice Status'
+            'type' => 'select',
+            'label' => 'Invoice Status',
+            'entity' => 'invoice_status',
+            'attribute' => 'status',
+            'model' => "App\Models\InvoiceStatus"
         ]);
 
         $this->crud->addField([
