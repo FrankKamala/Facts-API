@@ -34,6 +34,9 @@ class InvoiceStatus extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function invoices() {
+        return $this->hasMany('App\Invoice');
+    }
 
     /*
     |--------------------------------------------------------------------------

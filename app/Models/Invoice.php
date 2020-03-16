@@ -35,6 +35,10 @@ class Invoice extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function invoiceStatus() {
+        return $this->hasOne('App\InvoiceStatus');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
