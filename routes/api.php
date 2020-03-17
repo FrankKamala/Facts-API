@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resources([
-    'users' => 'Api\UserController'
+    'users' => 'Api\UserController',
+    'invoices' => 'Api\InvoiceController'
 ]);
