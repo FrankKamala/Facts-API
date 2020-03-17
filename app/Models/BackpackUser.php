@@ -5,9 +5,12 @@ namespace App\Models;
 use App\User;
 use Backpack\CRUD\app\Models\Traits\InheritsRelationsFromParentModel;
 use Backpack\CRUD\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
 
-class BackpackUser extends User
+class BackpackUser extends User implements MustVerifyEmail
 {
     use InheritsRelationsFromParentModel;
     use Notifiable;
@@ -34,5 +37,10 @@ class BackpackUser extends User
     public function getEmailForPasswordReset()
     {
         return $this->email;
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmail);
     }
 }
