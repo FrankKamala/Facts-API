@@ -10,9 +10,9 @@
 </li>
 
 <li class="nav-item nav-dropdown">
-  <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fa fa-copy"></i> Invoice</a>
+  <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fa fa-copy"></i> Invoices</a>
   <ul class="nav-dropdown-items">
-    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('invoice') }}'><i class='nav-icon fa fa-file'></i> Invoices</a></li>
-    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('invoicestatus') }}'><i class='nav-icon fa fa-question'></i> InvoiceStatuses</a></li>
+    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('invoice') }}'><i class='nav-icon fa fa-book'></i>All Invoices</a></li>
+    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('invoicestatus') }}'><i class='nav-icon fa fa-bell'></i> Invoice Status</a></li>
   </ul>
 </li>
