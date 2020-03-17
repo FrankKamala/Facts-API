@@ -17,8 +17,9 @@ class CreateInvoicesTable extends Migration
             $table->id();
             $table->bigInteger('supplier_id');
             $table->bigInteger('buyer_id');
-            $table->bigInteger('invoice_status');
+            $table->bigInteger('invoice_status')->default(1);
             $table->double('invoice_amount');
+            $table->date('due_date');
             $table->timestamps();
         });
     }

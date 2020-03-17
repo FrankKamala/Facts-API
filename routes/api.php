@@ -28,4 +28,6 @@ Route::middleware(['auth:api'])->group(function() {
         'invoice' => 'Api\InvoiceController',
         'transaction' => 'Api\TransactionController'
     ]);
+
+    Route::post('invoice/update/{id}', 'Api\InvoiceController@update');
 });

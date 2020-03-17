@@ -38,7 +38,13 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $invoice = Invoice::create([
+            'supplier_id' => Auth::id(),
+            'buyer_id' => $request->input('buyer_id'),
+            'invoice_amount' => $request->input('invoice_amount'),
+            'due_date' => $request->input('due_date')
+        ]);
+        return $invoice;
     }
 
     /**
@@ -72,7 +78,11 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $invoice = Invoice::findOrFail($id);
+        $invoice->update([
+            'invoice_status' => $request->input('invoice_status')
+        ]);
+        return $invoice;
     }
 
     /**

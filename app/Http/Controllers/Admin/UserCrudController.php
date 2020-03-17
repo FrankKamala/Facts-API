@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Hash;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -34,9 +35,33 @@ class UserCrudController extends CrudController
 
     protected function setupCreateOperation()
     {
+        $this->addUserFields();
+        $this->crud->request = $this->handlePasswordInput($this->crud->request);
         $this->crud->setValidation(UserRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
+        
+    }
+
+    protected function setupUpdateOperation()
+    {
+        $this->setupCreateOperation();
+    }
+
+    protected function handlePasswordInput($request)
+    {
+        // Encrypt password if specified.
+        if ($request->input('password')) {
+            $request->request->set('password', Hash::make($request->input('password')));
+        } else {
+            $request->request->remove('password');
+        }
+
+        return $request;
+    }
+
+    protected function addUserFields()
+    {
         $this->crud->addField([
             'name' => 'role',
             'type' => 'select',
@@ -63,10 +88,5 @@ class UserCrudController extends CrudController
             'type' => 'password',
             'label' => 'Password'
         ]);
-    }
-
-    protected function setupUpdateOperation()
-    {
-        $this->setupCreateOperation();
     }
 }
