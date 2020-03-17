@@ -37,7 +37,39 @@ class TransactionCrudController extends CrudController
         $this->crud->setValidation(TransactionRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addField([
+            'name' => 'transaction_type',
+            'type' => 'select',
+            'label' => 'Transaction Type',
+            'entity' => 'types',
+            'attribute' => 'type',
+            'model' => 'App\Models\TransactionType'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'account_id',
+            'type' => 'select',
+            'label' => 'Account Name',
+            'entity' => 'accounts',
+            'attribute' => 'account_name',
+            'model' => 'App\Models\Account'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'invoice_id',
+            'type' => 'select',
+            'label' => 'Invoice Number',
+            'entity' => 'invoices',
+            'attribute' => 'id',
+            'model' => 'App\Models\Invoice'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'transaction_amount',
+            'type' => 'number',
+            'label' => 'Transaction Amount',
+        ]);
     }
 
     protected function setupUpdateOperation()

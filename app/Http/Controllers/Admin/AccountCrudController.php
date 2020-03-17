@@ -37,7 +37,33 @@ class AccountCrudController extends CrudController
         $this->crud->setValidation(AccountRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addField([
+            'name' => 'user_id',
+            'type' => 'select',
+            'label' => 'User',
+            'entity' => 'user',
+            'attribute' => 'name',
+            'model' => 'App\Models\User'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'account_name',
+            'type' => 'text',
+            'label' => 'Account Name',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'account_number',
+            'type' => 'text',
+            'label' => 'Account Number',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'date_opened',
+            'type' => 'date_picker',
+            'label' => 'Date Opened',
+        ]);
     }
 
     protected function setupUpdateOperation()

@@ -20,7 +20,7 @@ class User extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['role', 'email', 'password', 'api_token'];
+    protected $fillable = ['role', 'name', 'email', 'password', 'api_token'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -38,6 +38,10 @@ class User extends Model
 
     public function invoices() {
         return $this->hasMany('App\Models\Invoice', 'supplier_id');
+    }
+
+    public function roles() {
+        return $this->belongsTo('App\Models\Role', 'role');
     }
 
     /*

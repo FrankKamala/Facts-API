@@ -34,6 +34,17 @@ class Transaction extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function types() {
+        return $this->belongsTo('App\Models\TransactionType', 'transaction_type');
+    }
+
+    public function invoices() {
+        return $this->belongsTo('App\Models\Invoice', 'invoice_id');
+    }
+
+    public function accounts() {
+        return $this->belongsTo('App\Models\Account', 'account_id');
+    }
 
     /*
     |--------------------------------------------------------------------------

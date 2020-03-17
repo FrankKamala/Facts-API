@@ -25,6 +25,7 @@ Auth::routes();
 Route::middleware(['auth:api'])->group(function() {
     Route::resources([
         'user' => 'Api\UserController',
-        'invoice' => 'Api\InvoiceController'
+        'invoice' => 'Api\InvoiceController',
+        'transaction' => 'Api\TransactionController'
     ]);
 });

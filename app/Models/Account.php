@@ -34,6 +34,13 @@ class Account extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function transactions() {
+        $this->hasMany('App\Models\Transaction', 'account_id');
+    }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 
     /*
     |--------------------------------------------------------------------------

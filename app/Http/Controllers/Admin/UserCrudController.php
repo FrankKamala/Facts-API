@@ -38,6 +38,15 @@ class UserCrudController extends CrudController
 
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->addField([
+            'name' => 'role',
+            'type' => 'select',
+            'label' => 'User Role',
+            'entity' => 'roles',
+            'attribute' => 'role',
+            'model' => 'App\Models\Role'
+        ]);
+
+        $this->crud->addField([
             'name' => 'name',
             'type' => 'text',
             'label' => 'User Name'
