@@ -15,7 +15,7 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user-id');
+            $table->bigInteger('user_id');
             $table->string('account_name');
             $table->date('date_opened');
             $table->timestamps();
