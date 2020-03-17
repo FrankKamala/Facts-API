@@ -17,4 +17,5 @@ Route::group([
     Route::crud('invoicestatus', 'InvoiceStatusCrudController');
     Route::crud('transaction', 'TransactionCrudController');
     Route::crud('transactiontype', 'TransactionTypeCrudController');
+    Route::crud('account', 'AccountCrudController');
 }); // this should be the absolute last line of this file

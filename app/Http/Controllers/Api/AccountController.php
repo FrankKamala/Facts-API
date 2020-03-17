@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Invoice;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class InvoiceController extends Controller
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +14,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        return User::find(Auth::id())->invoices;
+        //
     }
 
     /**

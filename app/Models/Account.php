@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Account extends Model
 {
     use CrudTrait;
 
@@ -16,11 +15,11 @@ class User extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'users';
+    protected $table = 'accounts';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['role', 'email', 'password', 'api_token'];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -35,10 +34,6 @@ class User extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function invoices() {
-        return $this->hasMany('App\Models\Invoice', 'supplier_id');
-    }
 
     /*
     |--------------------------------------------------------------------------
