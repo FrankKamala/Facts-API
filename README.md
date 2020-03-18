@@ -12,7 +12,7 @@ To use the token, add **Header** `Bearer Token` on your request.
 | /login  | POST  | Authenticate user and login  |
 | /logout  | POST  | End active session  |
 | /user/{id}  | GET  | Get user by id  |
-| /users  | GET  | Get all users  |
+| /user  | GET  | Get logged in user  |
 | /buyers  | GET  | Logged in supplier buyers  |
 
 ##### Sample Authentication Data
