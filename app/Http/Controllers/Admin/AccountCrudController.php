@@ -29,7 +29,33 @@ class AccountCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addColumn([
+            'name' => 'user_id',
+            'type' => 'select',
+            'label' => 'User',
+            'entity' => 'user',
+            'attribute' => 'name',
+            'model' => 'App\Models\User'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'account_name',
+            'type' => 'text',
+            'label' => 'Account Name',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'account_number',
+            'type' => 'text',
+            'label' => 'Account Number',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'date_opened',
+            'type' => 'date',
+            'label' => 'Date Opened',
+        ]);
     }
 
     protected function setupCreateOperation()

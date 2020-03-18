@@ -29,7 +29,36 @@ class TransactionCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addColumn([
+            'name' => 'transaction_type',
+            'type' => 'select',
+            'label' => 'Transaction Type',
+            'entity' => 'types',
+            'attribute' => 'type',
+            'model' => 'App\Models\TransactionType'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'account_id',
+            'type' => 'select',
+            'label' => 'Account Name',
+            'entity' => 'accounts',
+            'attribute' => 'account_name',
+            'model' => 'App\Models\Account'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'invoice_id',
+            'type' => 'number',
+            'label' => 'Invoice Number',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'transaction_amount',
+            'type' => 'number',
+            'label' => 'Transaction Amount',
+        ]);
     }
 
     protected function setupCreateOperation()
