@@ -64,6 +64,13 @@ class InvoiceCrudController extends CrudController
             'model' => "App\Models\InvoiceStatus"
         ]);
 
+        
+        $this->crud->addField([
+            'name' => 'due_date',
+            'type' => 'date_picker',
+            'label' => 'Due Date',
+        ]);
+
         $this->crud->addField([
             'name' => 'invoice_amount',
             'type' => 'number',

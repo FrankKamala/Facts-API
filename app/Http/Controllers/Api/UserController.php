@@ -19,6 +19,16 @@ class UserController extends Controller
         return Auth::user();
     }
 
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function all()
+    {
+        return User::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +58,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return User::find($id);
     }
 
     /**

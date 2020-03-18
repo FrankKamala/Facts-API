@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Models\Invoice;
 use App\Models\User;
+use App\Models\Invoice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
@@ -18,6 +19,21 @@ class InvoiceController extends Controller
     public function index()
     {
         return User::find(Auth::id())->invoices;
+    }
+
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function buyers()
+    {
+        $allbuyers = array();
+        $buyers = DB::table('invoices')->where('supplier_id', Auth::id())->pluck('buyer_id');
+        foreach ($buyers as $buyer) {
+            $allbuyers[] = User::find($buyer);
+        }
+        return $allbuyers;
     }
 
     /**
