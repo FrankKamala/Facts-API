@@ -69,3 +69,10 @@ account_id:1
 invoice_id:6
 transaction_amount:10000.00
 ```
+
+### Unauthenticated Routes
+| Endpoint  | Verb  | Description  
+|---|---|---|
+| /options/invoice  | GET  | Invoice statuses as defined by admin |
+| /options/transactions  | GET  | Transaction types as defined by admin  |
+| /users/all  | GET  | All users...  |
