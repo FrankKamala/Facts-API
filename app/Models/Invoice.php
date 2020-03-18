@@ -35,8 +35,8 @@ class Invoice extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function invoice_status() {
-        return $this->belongsTo('App\Models\InvoiceStatus', 'invoice_status');
+    public function status() {
+        return $this->belongsTo('App\Models\InvoiceStatus', 'invoice_status', 'id');
     }
 
     public function supplier() {

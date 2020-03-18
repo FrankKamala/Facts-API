@@ -29,7 +29,46 @@ class InvoiceCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addColumn([
+            'name' => 'supplier_id',
+            'type' => 'select',
+            'label' => 'Supplier',
+            'entity' => 'supplier',
+            'attribute' => 'name',
+            'model' => "App\Models\User"
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'buyer_id',
+            'type' => 'select',
+            'label' => 'Buyer',
+            'entity' => 'buyer',
+            'attribute' => 'name',
+            'model' => "App\Models\User"
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'invoice_status',
+            'type' => 'select',
+            'label' => 'Invoice Status',
+            'entity' => 'status',
+            'attribute' => 'status',
+            'model' => "App\Models\Invoice"
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'due_date',
+            'type' => 'date',
+            'label' => 'Due Date',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'invoice_amount',
+            'type' => 'number',
+            'label' => 'Invoice Amount'
+        ]);
+
     }
 
     protected function setupCreateOperation()
@@ -59,7 +98,7 @@ class InvoiceCrudController extends CrudController
             'name' => 'invoice_status',
             'type' => 'select',
             'label' => 'Invoice Status',
-            'entity' => 'invoice_status',
+            'entity' => 'status',
             'attribute' => 'status',
             'model' => "App\Models\InvoiceStatus"
         ]);
