@@ -32,3 +32,6 @@ Route::middleware(['auth:api'])->group(function() {
 
     Route::post('invoice/update/{id}', 'Api\InvoiceController@update');
 });
+
+Route::get('options/invoice', 'Api\OptionsController@invoice_status');
+Route::get('options/transaction', 'Api\OptionsController@transaction_type');
