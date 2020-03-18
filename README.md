@@ -1,5 +1,6 @@
 # Facts Africa API
-[http://factsafrika.herokuapp.com/api/]()
+[Go to Admin](http://factsafrika.herokuapp.com/admin/login)
+
 ### Endpoints
 ##### Authentication
 The API uses token based authentication. On successful login, user is assigned a token.
