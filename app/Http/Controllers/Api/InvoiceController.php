@@ -55,7 +55,7 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        return Invoice::find($id);
     }
 
     /**
