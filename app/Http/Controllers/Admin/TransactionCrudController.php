@@ -24,6 +24,24 @@ class TransactionCrudController extends CrudController
         $this->crud->setModel('App\Models\Transaction');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/transaction');
         $this->crud->setEntityNameStrings('transaction', 'transactions');
+
+        $this->crud->addFilter([
+            'name' => 'transaction_amount',
+            'type' => 'range',
+            'label'=> 'Transaction Amount',
+            'label_from' => 'min amount',
+            'label_to' => 'max amount'
+          ],
+          false,
+          function($value) {
+                      $range = json_decode($value);
+                      if ($range->from) {
+                          $this->crud->addClause('where', 'transaction_amount', '>=', (float) $range->from);
+                      }
+                      if ($range->to) {
+                          $this->crud->addClause('where', 'transaction_amount', '<=', (float) $range->to);
+                      }
+          });
     }
 
     protected function setupListOperation()

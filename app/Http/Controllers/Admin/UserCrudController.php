@@ -30,7 +30,7 @@ class UserCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setColumns(['name', 'email', 'role']);
+        $this->crud->setColumns(['name', 'email']);
         $this->crud->addFilter([
             'name' => 'role',
             'type' => 'dropdown',

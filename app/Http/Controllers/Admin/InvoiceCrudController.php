@@ -30,6 +30,49 @@ class InvoiceCrudController extends CrudController
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
         // $this->crud->setFromDb();
+        $this->crud->addFilter([
+            'name' => 'invoice_status',
+            'type' => 'dropdown',
+            'label' => 'Status'
+        ], [
+            1 => 'Pending',
+            2 => 'Approved',
+            3 => 'Rejected'
+        ], function($value) {
+            $this->crud->addClause('where', 'invoice_status', $value);
+            }
+        );
+
+        $this->crud->addFilter([ // daterange filter
+            'type' => 'date_range',
+            'name' => 'due_date',
+            'label'=> 'Due Date'
+          ],
+          false,
+          function($value) {
+            $dates = json_decode($value);
+            $this->crud->addClause('where', 'due_date', '>=', $dates->from);
+            $this->crud->addClause('where', 'due_date', '<=', $dates->to . ' 23:59:59');
+        });
+
+        $this->crud->addFilter([
+            'name' => 'invoice_amount',
+            'type' => 'range',
+            'label'=> 'Invoice Amount',
+            'label_from' => 'min amount',
+            'label_to' => 'max amount'
+          ],
+          false,
+          function($value) {
+                      $range = json_decode($value);
+                      if ($range->from) {
+                          $this->crud->addClause('where', 'invoice_amount', '>=', (float) $range->from);
+                      }
+                      if ($range->to) {
+                          $this->crud->addClause('where', 'invoice_amount', '<=', (float) $range->to);
+                      }
+          });
+
         $this->crud->addColumn([
             'name' => 'supplier_id',
             'type' => 'select',
