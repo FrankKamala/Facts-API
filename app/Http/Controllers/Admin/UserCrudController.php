@@ -36,6 +36,7 @@ class UserCrudController extends CrudController
             'type' => 'dropdown',
             'label' => 'Role'
         ], [
+            1 => 'Admin',
             2 => 'Supplier',
             3 => 'Buyer'
         ], function($value) {
