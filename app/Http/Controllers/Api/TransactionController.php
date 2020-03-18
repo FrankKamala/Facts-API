@@ -44,7 +44,13 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $transaction = Transaction::create([
+            'transaction_type' => $request->input('transaction_type'),
+            'account_id' => $request->input('account_id'),
+            'invoice_id' => $request->input('invoice_id'),
+            'transaction_amount' => $request->input('transaction_amount')
+        ]);
+        return $transaction;
     }
 
     /**
@@ -55,7 +61,7 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        //
+        return Transaction::find($id);
     }
 
     /**
