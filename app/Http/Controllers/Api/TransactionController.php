@@ -7,6 +7,7 @@ use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -17,7 +18,12 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return Transaction::all();
+        $transactions = array();
+        $accounts = DB::table('accounts')->where('user_id', Auth::id())->pluck('id');
+        foreach ($accounts as $account) {
+            $transactions[] = Transaction::find($account);
+        }
+        return $transactions;
     }
 
     /**
