@@ -44,6 +44,10 @@ class User extends Model
         return $this->belongsTo('App\Models\Role', 'role');
     }
 
+    public function accounts() {
+        return $this->hasMany('App\Models\Account', 'user_id');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

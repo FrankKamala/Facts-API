@@ -26,7 +26,8 @@ Route::middleware(['auth:api'])->group(function() {
     Route::resources([
         'user' => 'Api\UserController',
         'invoice' => 'Api\InvoiceController',
-        'transaction' => 'Api\TransactionController'
+        'transaction' => 'Api\TransactionController',
+        'account' => 'Api\AccountController'
     ]);
 
     Route::post('invoice/update/{id}', 'Api\InvoiceController@update');

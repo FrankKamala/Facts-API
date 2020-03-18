@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Account;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -14,7 +17,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
+        return User::find(Auth::id())->accounts;
     }
 
     /**
@@ -35,7 +38,13 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $account = Account::create([
+            'user_id' => Auth::id(),
+            'account_name' => $request->input('account_name'),
+            'account_number' => $request->input('account_number'),
+            'date_opened' => $request->input('date_opened')
+        ]);
+        return $account;
     }
 
     /**
@@ -46,7 +55,7 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-        //
+        return Account::find($id);
     }
 
     /**
