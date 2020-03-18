@@ -1,5 +1,5 @@
 # Facts Africa API
-[Go to Admin](http://factsafrika.herokuapp.com/admin/login)
+[http://factsafrika.herokuapp.com/api/](http://factsafrika.herokuapp.com/api/)
 
 ### Endpoints
 ##### Authentication
