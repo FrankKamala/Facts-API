@@ -26,7 +26,11 @@ class InvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'supplier_id' => 'required',
+            'buyer_id' => 'required',
+            'invoice_status' => 'required',
+            'due_date' => 'required',
+            'invoice_amount' => 'required'
         ];
     }
 

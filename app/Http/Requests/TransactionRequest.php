@@ -26,7 +26,10 @@ class TransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'transaction_type' => 'required',
+            'account_id' => 'required',
+            'invoice_id' => 'required',
+            'transaction_amount' => 'required'
         ];
     }
 

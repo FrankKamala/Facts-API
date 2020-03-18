@@ -26,7 +26,10 @@ class AccountRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'user_id' => 'required',
+            'account_name' => 'required',
+            'account_number' => 'required',
+            'date_opened' => 'required'
         ];
     }
 
