@@ -15,7 +15,7 @@
         'content' => [
               [
         'type' => 'progress',
-        'class' => 'card text-white bg-green mb-2',
+        'class' => 'card text-white bg-purple mb-2',
         'value' => App\User::where('role', 2)->count(),
         'description' => 'Registered Suppliers',
         'progress' => App\User::where('role', 2)->count(),
@@ -36,7 +36,7 @@
         'hint' => 'Significant growth'],
               [
         'type' => 'progress',
-        'class' => 'card text-white bg-success mb-2',
+        'class' => 'card text-white bg-green mb-2',
         'value' => App\Models\Invoice::where('invoice_status', 2)->count(),
         'description' => 'Approved Invoices',
         'progress' => App\Models\Invoice::where('invoice_status', 2)->count(),
