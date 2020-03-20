@@ -7,6 +7,9 @@ use App\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\InvoiceStatus;
+use App\Notifications\InvoiceApproved;
+use App\Notifications\InvoiceRejected;
 use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
@@ -98,6 +101,12 @@ class InvoiceController extends Controller
         $invoice->update([
             'invoice_status' => $request->input('invoice_status')
         ]);
+        if ($request->input('invoice_status') == 2) {
+            $invoice->notify(new InvoiceApproved($id));
+        }
+        if ($request->input('invoice_status') == 3) {
+            $invoice->notify(new InvoiceRejected($id));
+        }
         return $invoice;
     }
 

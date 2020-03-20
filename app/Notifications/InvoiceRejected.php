@@ -2,18 +2,17 @@
 
 namespace App\Notifications;
 
-use App\Models\Invoice;
 use App\Models\User;
+use App\Models\Invoice;
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
 
-class InvoiceApproved extends Notification
+class InvoiceRejected extends Notification
 {
     use Queueable;
-
     protected $invoice_id;
 
     /**
@@ -51,7 +50,7 @@ class InvoiceApproved extends Notification
         $receiver = User::find($receiver_id)->name;
         return (new MailMessage)
                     ->line('Hello '.$receiver.'.')
-                    ->line('Your invoice, Invoice No: '.$invoice_no.' to '.$buyer.' has been Approved.')
+                    ->line('Your invoice, Invoice No: '.$invoice_no.' to '.$buyer.' has been Rejected.')
                     ->line('Login to your mobile or web application to view details.')
                     ->line('Thank you for choosing our platform!');
     }

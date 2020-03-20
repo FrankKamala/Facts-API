@@ -60,16 +60,16 @@
         },
         {
             "name": "backpack/crud",
-            "version": "4.0.54",
+            "version": "4.0.56",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "e1ff2e96f70229c2ffafdb03b468bec9fcd74c70"
+                "reference": "f928e06478fcb803c3b078721c6f1585c8a3ad66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/e1ff2e96f70229c2ffafdb03b468bec9fcd74c70",
-                "reference": "e1ff2e96f70229c2ffafdb03b468bec9fcd74c70",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/f928e06478fcb803c3b078721c6f1585c8a3ad66",
+                "reference": "f928e06478fcb803c3b078721c6f1585c8a3ad66",
                 "shasum": ""
             },
             "require": {
@@ -143,7 +143,7 @@
                 "read",
                 "update"
             ],
-            "time": "2020-03-15T15:31:30+00:00"
+            "time": "2020-03-19T08:07:30+00:00"
         },
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -1307,16 +1307,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.2.0",
+            "version": "v7.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "77110b6434e65b10b655ab92e645e830b1a79caf"
+                "reference": "261e74cf8c6f760fd302fb08b2b51feb066f8987"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/77110b6434e65b10b655ab92e645e830b1a79caf",
-                "reference": "77110b6434e65b10b655ab92e645e830b1a79caf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/261e74cf8c6f760fd302fb08b2b51feb066f8987",
+                "reference": "261e74cf8c6f760fd302fb08b2b51feb066f8987",
                 "shasum": ""
             },
             "require": {
@@ -1454,7 +1454,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-03-17T14:08:55+00:00"
+            "time": "2020-03-19T14:31:45+00:00"
         },
         {
             "name": "laravel/helpers",
@@ -2801,16 +2801,16 @@
         },
         {
             "name": "studio-42/elfinder",
-            "version": "2.1.54",
+            "version": "2.1.55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "6ff46f6e168fcc75b206c577519a653fc44f21e9"
+                "reference": "7d7174dbadbadc19b1178ded8b62fbff738df877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/6ff46f6e168fcc75b206c577519a653fc44f21e9",
-                "reference": "6ff46f6e168fcc75b206c577519a653fc44f21e9",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/7d7174dbadbadc19b1178ded8b62fbff738df877",
+                "reference": "7d7174dbadbadc19b1178ded8b62fbff738df877",
                 "shasum": ""
             },
             "require": {
@@ -2855,7 +2855,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2020-03-14T14:01:59+00:00"
+            "time": "2020-03-18T11:37:50+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4630,16 +4630,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "b8dbf7791c81619161270d580a64a30bad41b832"
+                "reference": "67f1677954ad33ca6b77f2c41cf43a58624f27fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/b8dbf7791c81619161270d580a64a30bad41b832",
-                "reference": "b8dbf7791c81619161270d580a64a30bad41b832",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/67f1677954ad33ca6b77f2c41cf43a58624f27fc",
+                "reference": "67f1677954ad33ca6b77f2c41cf43a58624f27fc",
                 "shasum": ""
             },
             "require": {
@@ -4661,7 +4661,7 @@
                 "orchestra/testbench": "5.0"
             },
             "suggest": {
-                "laravel/telescope": "^2.0"
+                "laravel/telescope": "^3.1"
             },
             "type": "library",
             "extra": {
@@ -4697,7 +4697,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-03-05T12:32:22+00:00"
+            "time": "2020-03-18T19:20:44+00:00"
         },
         {
             "name": "facade/ignition-contracts",

@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class Invoice extends Model
 {
-    use CrudTrait;
+    use CrudTrait, Notifiable;
 
     /*
     |--------------------------------------------------------------------------
@@ -28,6 +30,9 @@ class Invoice extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function routeNotificationForMail($notification) {
+        return Auth::user()->email;
+    }
 
     /*
     |--------------------------------------------------------------------------
