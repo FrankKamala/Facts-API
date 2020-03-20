@@ -2,7 +2,7 @@
     background-color: #006B4D !important;
 }
 .bg-blue {
-    background-color: #0c4797;
+    background-color: #0c4797 !important;
 }
 .page-item.active
 .page-link {
@@ -15,9 +15,10 @@
 .btn-primary {
     background-color: #006B4D;
 }
-
+.navbar-light
 .navbar-brand {
     opacity: 1 !important;
+    background-color: #f0f3f9 !important;
 }
 
 .btn-link {
