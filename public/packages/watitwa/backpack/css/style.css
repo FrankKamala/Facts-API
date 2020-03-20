@@ -1,0 +1,20 @@
+.bg-green {
+    background-color: #006B4D !important;
+}
+.bg-blue {
+    background-color: #0c4797;
+}
+.page-item.active
+.page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #006B4D;
+    border-color: #467fd0;
+}
+
+.btn-primary {
+    background-color: #006B4D;
+}
+.navbar-brand {
+    opacity: 1 !important;
+}
