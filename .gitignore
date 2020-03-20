@@ -3,13 +3,6 @@
 /public/storage
 /storage/*.key
 /vendor
-!/vendor
-/vendor/*
-!/vendor/backpack/
-/vendor/backpack/*/*
-!/vendor/backpack/crud/
-/vendor/backpack/crud/*/
-!/vendor/backpack/crud/src/
 .env
 .env.backup
 .phpunit.result.cache
