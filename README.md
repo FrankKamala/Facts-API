@@ -27,6 +27,7 @@ password:password
 | Endpoint  | Verb  | Description  
 |---|---|---|
 | /invoice  | GET  | Logged in user invoices  |
+| /buyer/invoices  | GET  | Logged in BUYER invoices  |
 | /invoice/{id}  | GET  | Logged in user invoice by id  |
 | /invoice  | POST  | Upload new invoice  |
 | /invoice/update/{id}  | POST  | Update invoice status ONLY by invoice ID  |
