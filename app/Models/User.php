@@ -40,6 +40,10 @@ class User extends Model
         return $this->hasMany('App\Models\Invoice', 'supplier_id');
     }
 
+    public function buyerInvoices() {
+        return $this->hasMany('App\Models\Invoice', 'buyer_id');
+    }
+
     public function roles() {
         return $this->belongsTo('App\Models\Role', 'role');
     }

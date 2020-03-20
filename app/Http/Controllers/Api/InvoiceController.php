@@ -39,6 +39,10 @@ class InvoiceController extends Controller
         return $allbuyers;
     }
 
+    public function buyerInvoices() {
+        return User::find(Auth::id())->buyerInvoices;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
