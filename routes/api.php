@@ -40,3 +40,4 @@ Route::get('options/invoice', 'Api\OptionsController@invoice_status');
 Route::get('options/transaction', 'Api\OptionsController@transaction_type');
 Route::get('users/all', 'Api\UserController@all');
 Route::get('users/buyers', 'Api\UserController@buyers');
+Route::get('users/suppliers', 'Api\UserController@suppliers');

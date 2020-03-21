@@ -40,6 +40,11 @@ class UserController extends Controller
         return DB::table('users')->where('role', 3)->get();
     }
 
+    public function suppliers()
+    {
+        return DB::table('users')->where('role', 2)->get();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
