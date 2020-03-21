@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\InvoiceApproved;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
