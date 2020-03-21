@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -27,6 +28,16 @@ class UserController extends Controller
     public function all()
     {
         return User::all();
+    }
+
+            /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function buyers()
+    {
+        return DB::table('users')->where('role', 3)->get();
     }
 
     /**
