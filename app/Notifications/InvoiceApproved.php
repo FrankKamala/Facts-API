@@ -34,7 +34,7 @@ class InvoiceApproved extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'database'];
+        return ['mail'];
     }
 
     /**
@@ -65,7 +65,7 @@ class InvoiceApproved extends Notification
     public function toArray($notifiable)
     {
         return [
-            'invoice_id' => $this->invoice_id,
+            //
         ];
     }
 }
