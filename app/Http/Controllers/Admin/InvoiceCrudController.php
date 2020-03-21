@@ -72,6 +72,11 @@ class InvoiceCrudController extends CrudController
                           $this->crud->addClause('where', 'invoice_amount', '<=', (float) $range->to);
                       }
           });
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'number',
+            'label' => 'Invoice Number'
+        ]);
 
         $this->crud->addColumn([
             'name' => 'supplier_id',
