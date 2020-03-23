@@ -37,7 +37,7 @@ password:password
 ```
 buyer_id:1
 due_date:2020-04-09
-amount:9999.00
+invoice_amount:9999.00
 ```
 
 ##### Accounts
