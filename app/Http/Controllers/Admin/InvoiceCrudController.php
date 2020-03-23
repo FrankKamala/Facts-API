@@ -106,15 +106,21 @@ class InvoiceCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name' => 'due_date',
-            'type' => 'date',
-            'label' => 'Due Date',
-        ]);
-
-        $this->crud->addColumn([
             'name' => 'invoice_amount',
             'type' => 'number',
             'label' => 'Invoice Amount'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'type' => 'date',
+            'label' => 'Date Created'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'due_date',
+            'type' => 'date',
+            'label' => 'Due Date',
         ]);
 
     }
