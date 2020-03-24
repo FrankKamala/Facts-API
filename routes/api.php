@@ -34,8 +34,10 @@ Route::middleware(['auth:api'])->group(function() {
     Route::get('buyer/invoices', 'Api\InvoiceController@buyerInvoices');
 
     Route::post('invoice/update/{id}', 'Api\InvoiceController@update');
-});
 
+    Route::get('user/{id}/invoices/approved', 'Api\InvoiceController@approvedInvoices');
+
+});
 Route::get('options/invoice', 'Api\OptionsController@invoice_status');
 Route::get('options/transaction', 'Api\OptionsController@transaction_type');
 Route::get('users/all', 'Api\UserController@all');
