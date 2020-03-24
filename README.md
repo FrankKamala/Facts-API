@@ -31,6 +31,7 @@ password:password
 | /invoice/{id}  | GET  | Logged in user invoice by id  |
 | /invoice  | POST  | Upload new invoice  |
 | /invoice/update/{id}  | POST  | Update invoice status ONLY by invoice ID  |
+| /user/{id}/invoices/approved  | GET  | Supplier get buyers approved invoices. {id} is buyer id  |
 
 ##### Sample Invoices Data
 ###### New Invoice
