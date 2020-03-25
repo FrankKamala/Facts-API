@@ -146,4 +146,8 @@ class InvoiceController extends Controller
     public function buyerApproved() {
         return User::find(Auth::id())->buyerInvoices()->where('invoice_status', 2)->get();
     }
+
+    public function approved($id) {
+        return User::find($id)->supplierInvoices()->where('invoice_status', 2)->where('supplier_id', Auth::id())->get();
+    }
 }
