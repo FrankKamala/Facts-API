@@ -74,7 +74,7 @@ return [
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
     // 'project_logo'   => '<b>Facts</b> Africa',
-    'project_logo'   => '<img src="/images/facts_logo_final_white.png" height="50" width="100">',
+    'project_logo'   => '<img src="/images/facts_logo_final_white.png" height="40" width="100">',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
