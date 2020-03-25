@@ -2,7 +2,7 @@
 [http://factsafrika.herokuapp.com/api/](http://factsafrika.herokuapp.com/api/)
 
 ### Endpoints
-##### Authentication
+##### User and Authentication
 The API uses token based authentication. On successful login, user is assigned a token.
 
 To use the token, add **Header** `Bearer Token` on your request.
@@ -13,7 +13,8 @@ To use the token, add **Header** `Bearer Token` on your request.
 | /logout  | POST  | End active session  |
 | /user/{id}  | GET  | Get user by id  |
 | /user  | GET  | Get logged in user  |
-| /buyers  | GET  | Logged in supplier buyers  |
+| /supplier/buyers  | GET  | Logged in supplier buyers  |
+| /buyer/suppliers  | GET  | Logged in supplier buyers  |
 
 ##### Sample Authentication Data
 
@@ -26,12 +27,11 @@ password:password
 ##### Invoices
 | Endpoint  | Verb  | Description  
 |---|---|---|
-| /invoice  | GET  | Logged in user invoices  |
-| /buyer/invoices  | GET  | Logged in BUYER invoices  |
+| /supplier/invoices  | GET  | Logged in supplier invoices  |
+| /buyer/invoices  | GET  | Logged in buyer invoices  |
 | /invoice/{id}  | GET  | Logged in user invoice by id  |
 | /invoice  | POST  | Upload new invoice  |
 | /invoice/update/{id}  | POST  | Update invoice status ONLY by invoice ID  |
-| /user/{id}/invoices/approved  | GET  | Supplier get buyers approved invoices. {id} is buyer id  |
 
 ##### Sample Invoices Data
 ###### New Invoice
