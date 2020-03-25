@@ -21,7 +21,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        return User::find(Auth::id())->invoices;
+        return User::find(Auth::id())->supplierInvoices;
     }
 
         /**
@@ -39,8 +39,22 @@ class InvoiceController extends Controller
         return $allbuyers;
     }
 
+    public function suppliers()
+    {
+        $allsuppliers = array();
+        $suppliers = DB::table('invoices')->where('buyer_id', Auth::id())->pluck('supplier_id');
+        foreach ($suppliers as $supplier) {
+            $allsuppliers[] = User::find($supplier);
+        }
+        return $allsuppliers;
+    }
+
     public function buyerInvoices() {
         return User::find(Auth::id())->buyerInvoices;
+    }
+
+    public function supplierInvoices() {
+        return User::find(Auth::id())->supplierInvoices;
     }
 
     /**
@@ -125,7 +139,11 @@ class InvoiceController extends Controller
         //
     }
 
-    public function approvedInvoices($id) {
-        return User::find($id)->buyerInvoices()->where('invoice_status', 2)->where('supplier_id', Auth::id())->get();
+    public function supplierApproved() {
+        return User::find(Auth::id())->supplierInvoices()->where('invoice_status', 2)->get();
+    }
+
+    public function buyerApproved() {
+        return User::find(Auth::id())->buyerInvoices()->where('invoice_status', 2)->get();
     }
 }

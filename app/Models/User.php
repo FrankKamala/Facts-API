@@ -36,7 +36,7 @@ class User extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function invoices() {
+    public function supplierInvoices() {
         return $this->hasMany('App\Models\Invoice', 'supplier_id');
     }
 

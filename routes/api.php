@@ -29,13 +29,19 @@ Route::middleware(['auth:api'])->group(function() {
         'transaction' => 'Api\TransactionController',
         'account' => 'Api\AccountController'
     ]);
-    Route::get('buyers', 'Api\InvoiceController@buyers');
+    Route::get('supplier/buyers', 'Api\InvoiceController@buyers');
+
+    Route::get('buyer/suppliers', 'Api\InvoiceController@suppliers');
+
+    Route::get('supplier/invoices', 'Api\InvoiceController@supplierInvoices');
+
+    Route::get('supplier/invoices/approved', 'Api\InvoiceController@supplierApproved');
+
+    Route::get('buyer/invoices/approved', 'Api\InvoiceController@buyerApproved');
 
     Route::get('buyer/invoices', 'Api\InvoiceController@buyerInvoices');
 
     Route::post('invoice/update/{id}', 'Api\InvoiceController@update');
-
-    Route::get('user/{id}/invoices/approved', 'Api\InvoiceController@approvedInvoices');
 
 });
 Route::get('options/invoice', 'Api\OptionsController@invoice_status');
