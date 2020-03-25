@@ -14,7 +14,7 @@ To use the token, add **Header** `Bearer Token` on your request.
 | /user/{id}  | GET  | Get user by id  |
 | /user  | GET  | Get logged in user  |
 | /supplier/buyers  | GET  | Logged in supplier buyers  |
-| /buyer/suppliers  | GET  | Logged in supplier buyers  |
+| /buyer/suppliers  | GET  | Logged in buyer suppliers  |
 
 ##### Sample Authentication Data
 
